@@ -31,5 +31,16 @@
       <input type="button" value="slidetoggle" class="slidetoggle" />
     </div>
     <div class="content"></div>
+    <script>
+      $(".append").click(() => {
+        $(".content").append(`<div class="box"></div>`);
+        $(".box").last().css("background-color", makeColor);
+      });
+      function makeColor() {
+        const randomColor = "#" + Math.round(Math.random() * 0xffffff).toString(16);
+        // console.log(randomColor);
+        return randomColor;
+      }
+    </script>
   </body>
 </html>
