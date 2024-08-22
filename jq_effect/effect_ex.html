@@ -11,6 +11,9 @@
         height: 100px;
         margin-bottom: 10px;
       }
+      .red {
+        background-color: red;
+      }
     </style>
   </head>
   <body>
@@ -36,11 +39,71 @@
         $(".content").append(`<div class="box"></div>`);
         $(".box").last().css("background-color", makeColor);
       });
+      // 색상 랜덤으로 만드는 함수
       function makeColor() {
         const randomColor = "#" + Math.round(Math.random() * 0xffffff).toString(16);
         // console.log(randomColor);
         return randomColor;
       }
+      // 만들어진 박스 지우는 함수
+      $(".remove").click(() => {
+        $(".box").remove();
+      });
+      // 박스를 hide
+      $(".hide").click(function () {
+        $(".box").hide();
+      });
+      // show박스를 클릭해서 박스를 show
+      $(".show").click(function () {
+        $(".box").show();
+      });
+      // toggle
+      $(".toggle").click(function () {
+        $(".box").toggle();
+      });
+      // fadeout, 속도
+      $(".fadeout").click(function () {
+        $(".box").fadeOut(3000);
+      });
+      // fadein , 속도
+      $(".fadein").click(function () {
+        $(".box").fadeIn(2000);
+      });
+      // fadetoggle
+      $(".fadetoggle").click(function () {
+        $(".box").fadeToggle(1000);
+      });
+      // addclass
+      $(".addclass").click(() => {
+        $(".box").addClass("red");
+      });
+      // removeclass
+      $(".removeclass").click(() => {
+        $(".box").removeClass();
+      });
+      // toggleclass
+      $(".toggleclass").click(() => {
+        $(".box").toggleClass();
+      });
+      $(".slideup").click(() => {
+        // $(".box:odd").slideUp()
+        // $(".box:even").slideUp()
+      });
+      $(".slidedown").click(() => {
+        // $(".box:odd").slideUp()
+        // $(".box:even").slideUp()
+        $(".box").slideDown();
+      });
+      $(".slidetoggle").click(() => {
+        $(".content div").each(function (index, item) {
+          // console.log(index );
+          // console.log(item );
+
+          $(item).text(index);
+        });
+        // $(".box:odd").slideToggle()
+        $(".box:even").slideToggle();
+      });
     </script>
   </body>
 </html>
