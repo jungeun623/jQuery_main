@@ -19,14 +19,17 @@
       $(function () {
         $("#price-filter").keyup(function () {
           const maxPrice = $(this).val();
-          console.log(maxPrice);
+          // console.log(maxPrice);
           if (maxPrice === "") {
             $(".product").show();
           } else {
-            $(".product").hide().filter(function(){
-              // parseInt() 문자열을 숫자로 바꾸는 메서드
-              return parseInt($(this).data("price")) <= maxPrice
-            }).show()
+            $(".product")
+              .hide()
+              .filter(function () {
+                // parseInt() 문자열을 숫자로 바꾸는 메서드
+                return parseInt($(this).data("price")) <= maxPrice;
+              })
+              .show();
           }
         });
       });

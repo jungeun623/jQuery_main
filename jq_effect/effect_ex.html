@@ -11,32 +11,33 @@
         height: 100px;
         margin-bottom: 10px;
       }
-      .red {
-        background-color: red;
+      .active {
+        background-color: rgb(81, 0, 255);
       }
     </style>
   </head>
   <body>
     <div class="btn">
-      <input type="button" value="append" class="append" />
-      <input type="button" value="remove" class="remove" />
-      <input type="button" value="show" class="show" />
-      <input type="button" value="hide" class="hide" />
-      <input type="button" value="toggle" class="toggle" />
-      <input type="button" value="fadein" class="fadein" />
-      <input type="button" value="fadeout" class="fadeout" />
-      <input type="button" value="fadetoggle" class="fadetoggle" />
-      <input type="button" value="addclass" class="addclass" />
-      <input type="button" value="removeclass" class="removeclass" />
-      <input type="button" value="toggleclass" class="toggleclass" />
-      <input type="button" value="slideup" class="slideup" />
-      <input type="button" value="slidedown" class="slidedown" />
-      <input type="button" value="slidetoggle" class="slidetoggle" />
+      <button class="append">append</button>
+      <button class="remove">remove</button>
+
+      <button class="fadein">fadein</button>
+      <button class="fadeout">fadeout</button>
+      <button t class="fadetoggle">fadetoggle</button>
+      <button class="show">show</button>
+      <button class="hide">hide</button>
+      <button class="toggle">toggle</button>
+      <button class="addclass">addclass</button>
+      <button class="removeclass">removeclass</button>
+      <button class="toggleclass">toggleclass</button>
+      <button class="slideup">slideup</button>
+      <button class="slidedown">slidedown</button>
+      <button class="slidetoggle">slidetoggle</button>
     </div>
-    <div class="content"></div>
+    <div class="display"></div>
     <script>
       $(".append").click(() => {
-        $(".content").append(`<div class="box"></div>`);
+        $(".display").append(`<div class="box"></div>`);
         $(".box").last().css("background-color", makeColor);
       });
       // 색상 랜덤으로 만드는 함수
@@ -45,49 +46,46 @@
         // console.log(randomColor);
         return randomColor;
       }
-      // 만들어진 박스 지우는 함수
-      $(".remove").click(() => {
+      // 박스를 remove
+      $(".remove").click(function () {
         $(".box").remove();
       });
-      // 박스를 hide
-      $(".hide").click(function () {
-        $(".box").hide();
-      });
-      // show박스를 클릭해서 박스를 show
-      $(".show").click(function () {
+      // show클릭하고 박스를 show
+      $(".show").click(() => {
         $(".box").show();
       });
-      // toggle
-      $(".toggle").click(function () {
+
+      // hide클릭하고 박스를 hide
+      $(".hide").click(() => {
+        $(".box").hide();
+      });
+      // toggle클릭하고 박스를 toggle
+      $(".toggle").click(() => {
         $(".box").toggle();
       });
-      // fadeout, 속도
-      $(".fadeout").click(function () {
-        $(".box").fadeOut(3000);
+      // faidein(속도)
+      $(".fadein").click(() => {
+        $(".box").fadeIn(1000);
       });
-      // fadein , 속도
-      $(".fadein").click(function () {
-        $(".box").fadeIn(2000);
+      $(".fadeout").click(() => {
+        $(".box").fadeOut(1000);
       });
-      // fadetoggle
-      $(".fadetoggle").click(function () {
+      $(".fadetoggle").click(() => {
         $(".box").fadeToggle(1000);
       });
-      // addclass
       $(".addclass").click(() => {
-        $(".box").addClass("red");
+        $(".box").addClass("active");
       });
-      // removeclass
       $(".removeclass").click(() => {
-        $(".box").removeClass();
+        $(".box").removeClass("active");
       });
-      // toggleclass
       $(".toggleclass").click(() => {
-        $(".box").toggleClass();
+        $(".box").toggleClass("active");
       });
       $(".slideup").click(() => {
         // $(".box:odd").slideUp()
         // $(".box:even").slideUp()
+        $(".box").slideUp();
       });
       $(".slidedown").click(() => {
         // $(".box:odd").slideUp()
@@ -95,13 +93,12 @@
         $(".box").slideDown();
       });
       $(".slidetoggle").click(() => {
-        $(".content div").each(function (index, item) {
+        $(".display div").each(function (index, item) {
           // console.log(index );
           // console.log(item );
-
           $(item).text(index);
         });
-        // $(".box:odd").slideToggle()
+        //  $(".box:odd").slideToggle()
         $(".box:even").slideToggle();
       });
     </script>
