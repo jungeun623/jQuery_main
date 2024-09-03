@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>document</title>
+    <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
@@ -16,17 +16,17 @@
             // console.log(data);
             // console.log(status);
             // $("#result").html(data)
-            const outPut = `<ul>`;
+            let outPut = `<ul>`;
             $.each(data, function (key, value) {
               // console.log(data);
               // console.log(key);
               // console.log(value);
-              outPut += ` <li>${value}</li> `;
-              // console.log(outPut);
+              outPut += `<li>${value}</li>`;
             });
-            outPut += `</ul>`;
+            outPut += `</ul>`
             console.log(outPut);
-            $("#result").html(outPut);
+            $("#result").html(outPut)
+            
           });
         });
       });

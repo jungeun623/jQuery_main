@@ -3,20 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>document</title>
+    <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
-    <button id="btnGetData">HTML 데이터 가져오기</button>
+    <button id="btnGetData">HTML 가져오기</button>
     <div id="result"></div>
     <script>
       $(document).ready(function () {
-       $("#btnGetData").click(function(){
-        $.get("data.html",function(data){
-          // console.log(data)
+        $("#btnGetData").click(function () {
+         $.get("data.html",function(data){
+          // console.log(data);
           $("#result").html(data)
-        })
-       })
+          
+         })
+        });
       });
     </script>
   </body>

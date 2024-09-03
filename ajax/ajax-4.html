@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>document</title>
+    <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
-    <button id="btnGetData">HTML 데이터 가져오기</button>
+    <button id="btnGetData">HTML 가져오기</button>
     <div id="result"></div>
     <script>
       $(document).ready(function () {
@@ -19,13 +19,12 @@
             $(data)
               .find("person")
               .each(function (a, b) {
-                // console.log(a,b);
-                // outPut += `<li> name : ${$(this).find("name").text()}, 
-                //                 age : ${$(this).find("age").text()},
-                //                 city : ${$(this).find("city").text()} </li>`;
-                outPut += `<li> name : ${$(this).find("name").first().text()}, 
-                                age : ${$(this).find("age").first().text()},
-                               city : ${$(this).find("city").first().text()} </li>`;
+                // console.log(a , b);
+                outPut += `<li> name : ${$(this).find("name").text()} , 
+                                age : ${$(this).find("age").text()} ,
+                                city : ${$(this).find("city").text()}
+                                </li>`;
+              
               });
             outPut += `</ul>`;
             $("#result").html(outPut);

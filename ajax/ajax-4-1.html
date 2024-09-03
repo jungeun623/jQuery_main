@@ -16,11 +16,11 @@
             // console.log(data);
             let outPut = `<ul>`;
             // console.log(outPut);
-            let firstPersom = $(data).find("person").first();
-            let name = firstPersom.find("name").text();
-            let age = firstPersom.find("age").text();
-            let city = firstPersom.find("city").text();
-            outPut += `<li> Name : ${name} , Age: ${age} , City: ${city} </li>`;
+            let firstPerson = $(data).find("person").first();
+            let name = firstPerson.find("name").text();
+            let age = firstPerson.find("age").text();
+            let city = firstPerson.find("city").text();
+            outPut += `<li> Name : ${name} , Age:${age}  , City :   ${city}  </li> `;
             outPut += `</ul>`;
             $("#result").html(outPut);
           });
