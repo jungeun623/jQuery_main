@@ -54,7 +54,7 @@
               $("button", o).on("click", function () {
                 // 만약 현재 클릭된 항목의 다음 요소가 숨겨져 있으면
                 if ($(this).parent().next().is(":hidden")) {
-                  $("li > div:visible", o).hide();
+                  $("li > div:visible" , o).hide();
                   $(this).parent().next().show();
                 } else {
                   $("li > div:visible", o).hide();
